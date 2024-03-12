@@ -48,8 +48,8 @@ const About = () => {
 
   const [cards, setCards] = useState([
     {
-      name: "Ms.Richa upadhyay",
-      image: "/staff/Richa Upadhyay.jpg",
+      name: "Ms.RichaUpadhyay",
+      image: "/staff/RichaUpadhyay.jpg",
       qualification: "Bachelor's Degree in Early Childhood Education",
       description:
         "Ms. Sarah is a passionate educator with over 10 years of experience in guiding young minds. Her warm and nurturing approach creates a welcoming classroom environment where children feel comfortable.",
