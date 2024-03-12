@@ -13,7 +13,7 @@ import { scrollToTop } from "@/lib/helpers/scrollToTopOfContainer";
 const contactMethods = [
   {
     imageUrl: "/message.svg",
-    value: "admission@lnctindore.com",
+    value: "admission@lnctSONKATCH.com",
   },
   {
     imageUrl: "/phone.svg",
@@ -25,7 +25,7 @@ const contactMethods = [
   },
   {
     imageUrl: "/location.svg",
-    value: "BHAWARASALA INDORE",
+    value: "BHAWARASALA SONKATCH",
   },
 ];
 const ContactForm = () => {
@@ -206,7 +206,7 @@ const ContactForm = () => {
                     <div className="flex flex-col">
                       <h2 className="text-2xl">Main Office</h2>
                       <p className="text-gray-400">
-                        BHAWARASALA , BEHIND ARVINDO REVATI, Sanwer Rd, Indore,
+                        BHAWARASALA , BEHIND ARVINDO REVATI, Sanwer Rd, SONKATCH,
                         Madhya Pradesh 453555
                       </p>
                     </div>
@@ -225,7 +225,7 @@ const ContactForm = () => {
 
                   <div className="flex my-4 w-2/3 lg:w-1/2">
                     <a
-                      href="https://www.google.com/maps/search/pratibha+global+school+indore/@22.8001571,75.8378225,17z?entry=ttu"
+                      href="https://www.google.com/maps/search/pratibha+global+school+SONKATCH/@22.8001571,75.8378225,17z?entry=ttu"
                       target="_blank"
                       rel="noreferrer"
                       className="rounded-full bg-white h-8 w-8 inline-block mx-1 text-center pt-1"

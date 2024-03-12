@@ -15,10 +15,10 @@ export default function page() {
             heading="Mr. Suprabhat Chouksey, Managing Director of SKC LNCT Group Of Colleges "
             content="Greetings, Pratibha Global School community!
 
-            As the Director, I'm thrilled to welcome our students, parents, and staff to a promising academic year in Indore, Madhya Pradesh. Our commitment to fostering excellence across Pre-Primary to Higher-Secondary levels remains unwavering. Let's embark on this educational journey together, nurturing minds, and shaping futures. Wishing all a year filled with growth, achievements, and memorable learning experiences."
+            As the Director, I'm thrilled to welcome our students, parents, and staff to a promising academic year in SONKATCH, Madhya Pradesh. Our commitment to fostering excellence across Pre-Primary to Higher-Secondary levels remains unwavering. Let's embark on this educational journey together, nurturing minds, and shaping futures. Wishing all a year filled with growth, achievements, and memorable learning experiences."
             name="Mr. Suprabhat Chouksey"
             post="Managing Director"
-            place="Bhawarsala Indore"
+            place="Bhawarsala SONKATCH"
         />
         
     </div>

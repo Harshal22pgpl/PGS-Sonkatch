@@ -18,10 +18,10 @@ export default function page() {
                         heading="Mrs. Pratibha Chouksey, Co-Founder & Chairperson SKC LNCT Group Of Colleges"
                         content="Greetings, Pratibha Global School community,
 
-                        It's an honor to lead our educational journey in Indore, Madhya Pradesh. Our commitment to providing quality education spans across Pre-Primary to Higher-Secondary levels. With a dedicated faculty and engaged parents, let's empower our students to excel academically and personally. Wishing everyone a year of discovery, growth, and success."
+                        It's an honor to lead our educational journey in SONKATCH, Madhya Pradesh. Our commitment to providing quality education spans across Pre-Primary to Higher-Secondary levels. With a dedicated faculty and engaged parents, let's empower our students to excel academically and personally. Wishing everyone a year of discovery, growth, and success."
                         name="Mrs. Patibha Chouksey"
                         post="Chairperson"
-                        place="Bhawarsala Indore"
+                        place="Bhawarsala SONKATCH"
                     />
 
                 </div>

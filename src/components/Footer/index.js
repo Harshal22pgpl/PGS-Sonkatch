@@ -39,7 +39,7 @@ const Footer = () => {
                     href="https://pratibha-global-school.vercel.app/"
                     className="text-gray-700 transition hover:opacity-75"
                   >
-                    PGS-Indore
+                    PGS-SONKATCH
                   </Link>
                 </li>
 
@@ -202,7 +202,7 @@ const Footer = () => {
                     href="#"
                     className="text-gray-700 transition hover:opacity-75"
                   >
-                    admission@lnctindore.com
+                    admission@lnctSONKATCH.com
                   </Link>
                 </li>
                 <li>
@@ -220,7 +220,7 @@ const Footer = () => {
                     className="text-gray-700 transition hover:opacity-75"
                   >
                     Main Office BHAWARASALA , BEHIND ARVINDO REVATI, Sanwer Rd,
-                    Indore, Madhya Pradesh 453555
+                    SONKATCH, Madhya Pradesh 453555
                   </Link>
                 </li>
               </ul>

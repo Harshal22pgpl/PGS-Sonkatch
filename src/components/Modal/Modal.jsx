@@ -40,7 +40,7 @@ const Modal = ({ showModal, toggleModal }) => {
                     <div className="col-span-2 sm:col-span-1">
                         <label htmlFor="category" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Select Branch</label>
                         <select id="category" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
-                            <option value="TV">PGPL INDORE</option>
+                            <option value="TV">PGPL SONKATCH</option>
                             <option value="PC">PGPL DEWAS</option>
                             <option value="GA">PGPL GWALIOR</option>
                             <option value="PH">PGPL UJJAIN</option>
@@ -52,7 +52,7 @@ const Modal = ({ showModal, toggleModal }) => {
                     </div>
                     <div className="col-span-2 sm:col-span-1">
                         <label htmlFor="price" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">City</label>
-                        <input type="text" name="price" id="price" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="eg. Indore" required=""/>
+                        <input type="text" name="price" id="price" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="eg. SONKATCH" required=""/>
                     </div>
                     <div className="col-span-2">
                         <label htmlFor="description" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Other Query</label>

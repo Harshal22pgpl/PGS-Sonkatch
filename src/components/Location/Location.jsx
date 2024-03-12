@@ -3,44 +3,8 @@ import CollegeContainer from "../Container/CollegeContainer"
 import WhatsappSvg from "../SVG/WhatsappSvg"
 
 const schools =[{
-    name: 'PRATIBHA GLOBAL SCHOOL , INDORE',
-    location: 'BHAWARASALA , BEHIND ARVINDO REVATI, Sanwer Rd, Indore, Madhya Pradesh 453555',
-    img: 'https://content.jdmagicbox.com/comp/delhi/z1/011pxx11.xx11.200122132514.v3z1/catalogue/global-pratibha-international-school-dwarka-sector-8-delhi-schools-1t0d4ucxsp.jpg?clr=',
-    contact: '9080000',
-    link: '',
-    grades: 'Nursery - Grade XII',
-    fees:'1200-5000/- Per Month',
-    timing: '8:30 AM to 3:30 PM',
-    estaDate: '1999',
-    whatsappDeepLink:''
-},
-{
-    name: 'PRATIBHA GLOBAL SCHOOL , INDORE',
-    location: 'BHAWARASALA , BEHIND ARVINDO REVATI, Sanwer Rd, Indore, Madhya Pradesh 453555',
-    img: 'https://content.jdmagicbox.com/comp/delhi/z1/011pxx11.xx11.200122132514.v3z1/catalogue/global-pratibha-international-school-dwarka-sector-8-delhi-schools-1t0d4ucxsp.jpg?clr=',
-    contact: '9080000',
-    link: '',
-    grades: 'Nursery - Grade XII',
-    fees:'1200-5000/- Per Month',
-    timing: '8:30 AM to 3:30 PM',
-    estaDate: '1999',
-    whatsappDeepLink:''
-},
-{
-    name: 'PRATIBHA GLOBAL SCHOOL , BHAURASA',
-    location: 'BHAWARASALA , BEHIND ARVINDO REVATI, Sanwer Rd, Indore, Madhya Pradesh 453555',
-    img: 'https://content.jdmagicbox.com/comp/delhi/z1/011pxx11.xx11.200122132514.v3z1/catalogue/global-pratibha-international-school-dwarka-sector-8-delhi-schools-1t0d4ucxsp.jpg?clr=',
-    contact: '9080000',
-    link: '',
-    grades: 'Nursery - Grade XII',
-    fees:'1200-5000/- Per Month',
-    timing: '8:30 AM to 3:30 PM',
-    estaDate: '1999',
-    whatsappDeepLink:''
-},
-{
-    name: 'PRATIBHA GLOBAL SCHOOL , BAGLI',
-    location: 'BHAWARASALA , BEHIND ARVINDO REVATI, Sanwer Rd, Indore, Madhya Pradesh 453555',
+    name: 'PRATIBHA GLOBAL SCHOOL , SONKATCH',
+    location: 'BHAWARASALA , BEHIND ARVINDO REVATI, Sanwer Rd, SONKATCH, Madhya Pradesh 453555',
     img: 'https://content.jdmagicbox.com/comp/delhi/z1/011pxx11.xx11.200122132514.v3z1/catalogue/global-pratibha-international-school-dwarka-sector-8-delhi-schools-1t0d4ucxsp.jpg?clr=',
     contact: '9080000',
     link: '',
@@ -52,7 +16,43 @@ const schools =[{
 },
 {
     name: 'PRATIBHA GLOBAL SCHOOL , SONKATCH',
-    location: 'BHAWARASALA , BEHIND ARVINDO REVATI, Sanwer Rd, Indore, Madhya Pradesh 453555',
+    location: 'BHAWARASALA , BEHIND ARVINDO REVATI, Sanwer Rd, SONKATCH, Madhya Pradesh 453555',
+    img: 'https://content.jdmagicbox.com/comp/delhi/z1/011pxx11.xx11.200122132514.v3z1/catalogue/global-pratibha-international-school-dwarka-sector-8-delhi-schools-1t0d4ucxsp.jpg?clr=',
+    contact: '9080000',
+    link: '',
+    grades: 'Nursery - Grade XII',
+    fees:'1200-5000/- Per Month',
+    timing: '8:30 AM to 3:30 PM',
+    estaDate: '1999',
+    whatsappDeepLink:''
+},
+{
+    name: 'PRATIBHA GLOBAL SCHOOL , BHAURASA',
+    location: 'BHAWARASALA , BEHIND ARVINDO REVATI, Sanwer Rd, SONKATCH, Madhya Pradesh 453555',
+    img: 'https://content.jdmagicbox.com/comp/delhi/z1/011pxx11.xx11.200122132514.v3z1/catalogue/global-pratibha-international-school-dwarka-sector-8-delhi-schools-1t0d4ucxsp.jpg?clr=',
+    contact: '9080000',
+    link: '',
+    grades: 'Nursery - Grade XII',
+    fees:'1200-5000/- Per Month',
+    timing: '8:30 AM to 3:30 PM',
+    estaDate: '1999',
+    whatsappDeepLink:''
+},
+{
+    name: 'PRATIBHA GLOBAL SCHOOL , BAGLI',
+    location: 'BHAWARASALA , BEHIND ARVINDO REVATI, Sanwer Rd, SONKATCH, Madhya Pradesh 453555',
+    img: 'https://content.jdmagicbox.com/comp/delhi/z1/011pxx11.xx11.200122132514.v3z1/catalogue/global-pratibha-international-school-dwarka-sector-8-delhi-schools-1t0d4ucxsp.jpg?clr=',
+    contact: '9080000',
+    link: '',
+    grades: 'Nursery - Grade XII',
+    fees:'1200-5000/- Per Month',
+    timing: '8:30 AM to 3:30 PM',
+    estaDate: '1999',
+    whatsappDeepLink:''
+},
+{
+    name: 'PRATIBHA GLOBAL SCHOOL , SONKATCH',
+    location: 'BHAWARASALA , BEHIND ARVINDO REVATI, Sanwer Rd, SONKATCH, Madhya Pradesh 453555',
     img: 'https://content.jdmagicbox.com/comp/delhi/z1/011pxx11.xx11.200122132514.v3z1/catalogue/global-pratibha-international-school-dwarka-sector-8-delhi-schools-1t0d4ucxsp.jpg?clr=',
     contact: '9080000',
     link: '',
@@ -64,7 +64,7 @@ const schools =[{
 },
 {
     name: 'PRATIBHA GLOBAL SCHOOL , GWALIOR',
-    location: 'BHAWARASALA , BEHIND ARVINDO REVATI, Sanwer Rd, Indore, Madhya Pradesh 453555',
+    location: 'BHAWARASALA , BEHIND ARVINDO REVATI, Sanwer Rd, SONKATCH, Madhya Pradesh 453555',
     img: 'https://content.jdmagicbox.com/comp/delhi/z1/011pxx11.xx11.200122132514.v3z1/catalogue/global-pratibha-international-school-dwarka-sector-8-delhi-schools-1t0d4ucxsp.jpg?clr=',
     contact: '9080000',
     link: '',

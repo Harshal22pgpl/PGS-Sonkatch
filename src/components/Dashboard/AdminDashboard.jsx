@@ -157,7 +157,7 @@ const Dashboard = ({ clientProps }) => {
                 <tbody>
                   <tr className="text-gray-700 dark:text-gray-100">
                     <th className="border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
-                      Indore
+                      SONKATCH
                     </th>
                     <td className="border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
                       5,480

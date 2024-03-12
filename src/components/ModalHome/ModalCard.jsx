@@ -38,7 +38,7 @@ export default function ModalCard() {
   return (
     <>
       <div className="w-full h-full " >
-        <h1 className='text-center p-3 text-tgreen text-5xl font-extrabold'>Pratibha Global School, Indore</h1>
+        <h1 className='text-center p-3 text-tgreen text-5xl font-extrabold'>Pratibha Global School, SONKATCH</h1>
         <h2 className='text-center p-3 text-tgreen text-3xl font-extrabold'>Admission Open 2024-25</h2>
 
         <div className='flex flex-col md:flex-row md:justify-around items-center bg-cover'>
@@ -78,7 +78,7 @@ export default function ModalCard() {
               required
               className="border border-gray-300 rounded-md px-4 py-2"
             >
-              <option value="Indore">Indore</option>
+              <option value="SONKATCH">SONKATCH</option>
               <option value="Bagli">Bagli</option>
               <option value="Gwaliour">Gwaliour</option>
               <option value="Nathdwara">Nathdwara</option>

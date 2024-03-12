@@ -41,11 +41,11 @@ export default function NewEventCard({ event }) {
 
   // Convert both location and the comparison value to lowercase
   const lowerCaseLocation = location.toLowerCase();
-  const searchTerm = "indore";
+  const searchTerm = "SONKATCH";
 
-  // Check if the lowercase location contains the string 'indore'
+  // Check if the lowercase location contains the string 'SONKATCH'
   if (!lowerCaseLocation.includes(searchTerm)) {
-    // If location does not contain 'indore', return null (render nothing)
+    // If location does not contain 'SONKATCH', return null (render nothing)
     return null;
   }
 

@@ -5,7 +5,7 @@ export const FORM_INITIALS ={
   applicantName: '',
   applicantPhone: '',
   applicantEmail: '',
-  instituteName: 'Indore',
+  instituteName: 'SONKATCH',
   admissionYear: '',
   otherQuery:''
 }

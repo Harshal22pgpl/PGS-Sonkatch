@@ -8,7 +8,7 @@ const eventDetails = {
   date: "08",
   month: "January",
   year: "2024",
-  location: "LNCT College, Indore",
+  location: "LNCT College, SONKATCH",
   startTime: "2.30 pm",
   endTime: "5.30pm",
   heading: "Inter School Dance Competition",

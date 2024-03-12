@@ -14,8 +14,8 @@ import TrackRoute from './tracker/TrackRoute'
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "PGPL~INDORE",
-  description: "Developed by PGPL Pvt. Ltd., Indore",
+  title: "PGPL~SONKATCH",
+  description: "Developed by PGPL Pvt. Ltd., SONKATCH",
 };
 
 export default function RootLayout(props) {
