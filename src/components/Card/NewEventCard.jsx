@@ -41,7 +41,7 @@ export default function NewEventCard({ event }) {
 
   // Convert both location and the comparison value to lowercase
   const lowerCaseLocation = location.toLowerCase();
-  const searchTerm = "SONKATCH";
+  const searchTerm = "sonkatch";
 
   // Check if the lowercase location contains the string 'SONKATCH'
   if (!lowerCaseLocation.includes(searchTerm)) {
@@ -53,7 +53,7 @@ export default function NewEventCard({ event }) {
   const newEndDate = dateConvertor(endDate);
 
   return (
-    <div className="w-full rounded-xl p-3 bg-[#f6fdc4] border-2 border-tgreen hover:scale-105 transition-transform hover:bg- hover:text-gray-200">
+    <div className="w-full rounded-xl p-3 bg-[#f6fdc4] border-2 border-tgreen hover:scale-105 transition-transform hover:bg-yellow-600 hover:text-gray-200">
       <div className="w-full h-60 mx-auto rounded-xl relative overflow-hidden">
         <img
           src={event.thumbNail}
@@ -70,7 +70,7 @@ export default function NewEventCard({ event }) {
         </h2>
         {/* <h3 className="px-2 py-2  text-[15px] font-semibold">Location : </h3> */}
         <button
-          className="w-1/3 rounded-md p-2 mt-3 bg-gray-200 text-sm outline-none text-black font-semibold duration-100 hover:text-white hover:bg-green-800"
+          className="w-1/3 rounded-md p-2 mt-3 bg-gray-200 text-sm outline-none text-black font-semibold duration-100 hover:text-white hover:bg-yellow-800"
           onClick={() => {
             router.push(`/event/details/${uuid}`);
           }}
