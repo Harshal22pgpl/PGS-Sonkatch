@@ -7,6 +7,10 @@ import { validator } from "@/lib/helpers/validator";
 import Notification from "@/components/Toast/Notification";
 import { scrollToTop } from "@/lib/helpers/scrollToTopOfContainer";
 import moment from "moment";
+import {ADMIN} from '@/lib/constants/index'
+import { first } from "lodash";
+import useDropdown from "@/hooks/useDropDown";
+
 import { uploadImg } from "@/lib/services/files/fileServices";
 export const EVENTS_INITIAL = {
   title: "",
@@ -16,7 +20,7 @@ export const EVENTS_INITIAL = {
   startDate: "",
   category: "",
   endDate: "",
-  OrganizationUuid: "89e7bf84-7422-42f4-b5e4-acc76b582dd6",
+  OrganizationUuid: "",
   type: "",
   registrationRequired: false,
   capacity: 0,
@@ -60,12 +64,7 @@ const fields = [
     type: "date-time",
     placeholder: "Select End Date",
   },
-  {
-    name: "OrganizationUuid",
-    label: "Organization UUID",
-    type: "text",
-    placeholder: "Enter Organization UUID",
-  },
+ 
   { name: "type", label: "Type", type: "text", placeholder: "Enter Type" },
   {
     name: "registrationRequired",
@@ -88,8 +87,9 @@ const fields = [
 // NewsForm component
 export default function NewsForm({
   onFormSubmit,
-  events = [],
+  events =[],
   selectedEventId,
+  ...others 
 }) {
   const [isLoading, setIsLoading] = useState(false);
   const [hasError, setError] = useState({ msg: "", type: "" });
@@ -102,6 +102,16 @@ export default function NewsForm({
     startDate: moment().format("YYYY-MM-DDTHH:mm"), // Initialize with current date and time
     endDate: moment().format("YYYY-MM-DDTHH:mm"), // Initialize with current date and time
   });
+  const { schools = [], schoolUuid = '', profile = {} } = others;
+  console.log(schools)
+  const [organization, OrganizationDropDown, setOrganization] = useDropdown(
+    "School",
+    schoolUuid || first(schools).value,
+    others?.schools || []
+
+    )
+
+
   useEffect(() => {
     if (selectedEventId) {
       const selectedEvent = events.find(
@@ -118,7 +128,6 @@ export default function NewsForm({
           endDate: moment(selectedEvent.endDate).format("YYYY-MM-DDTHH:mm:ss"),
           location: selectedEvent.location,
           category: selectedEvent.category,
-          OrganizationUuid: selectedEvent.OrganizationUuid,
           type: selectedEvent.type,
           registrationRequired: selectedEvent.registrationRequired,
           capacity: selectedEvent.capacity,
@@ -178,7 +187,7 @@ export default function NewsForm({
     setValidationErrors({}); // Clear previous validation errors
     setError({ msg: '', type: '' });
 
- 
+
     try {
       // Validation for empty fields
       const newValidationErrors = {};
@@ -209,15 +218,17 @@ export default function NewsForm({
           thumbNail: imgRes,
           startDate: formattedDate,
           endDate: formattedDate,
-          uuid: selectedEventId // Corrected duplicated uuid property
+          uuid: selectedEventId,
+          OrganizationUuid: organization || schoolUuid, // Corrected duplicated uuid property
         });
       } else {
         res = await addEvent({
           ...eventData,
           thumbNail: imgRes,
           publishedDate: formattedDate,
+          OrganizationUuid: organization || schoolUuid,
         });
-
+        onFormSubmit();
       }
 
       if (res) {
@@ -228,14 +239,13 @@ export default function NewsForm({
           startDate: moment().format('YYYY-MM-DDTHH:mm'),
           endDate: moment().format('YYYY-MM-DDTHH:mm'),
         });
-     
+
 
       }
     } catch (error) {
       setError({ msg: error.message || 'An error occurred', type: 'error' });
       console.error("Error submitting form:", error);
     } finally {
-      onFormSubmit();
       setIsLoading(false)
       setEventData({
         ...EVENTS_INITIAL,
@@ -250,11 +260,11 @@ export default function NewsForm({
   return (
     <>
       <div className='flex flex-col w-full justify-center items-center bg-[url("/MessageSvg.svg")]'>
-        <h1 className="text-center mx-auto w-full my-3 text-4xl font-bold text-tgreen ">
+        <h1 className="text-center mx-auto w-full my-3 text-4xl font-bold text-tyellow ">
           Event Details Form
         </h1>
         <div
-          className="w-11/12 rounded-lg flex flex-col justify-center items-center bg-bgreen opacity-75 p-5"
+          className="w-11/12 rounded-lg flex flex-col justify-center items-center bg-byellow opacity-75 p-5"
           onSubmit={handleSubmit}
         >
           <div className="w-full grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 ">
@@ -285,6 +295,7 @@ export default function NewsForm({
                 )}
               </div>
             ))}
+            {profile.userType === ADMIN && <OrganizationDropDown />}
           </div>
           <div className="flex justify-center items-center mt-5">
             <div className="checkbox-container">
@@ -305,7 +316,7 @@ export default function NewsForm({
             <>
               <button
                 onClick={handleSubmit}
-                className="w-20 my-5 mx-2 p-2 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600 bg-white hover:bg-tgreen"
+                className="w-20 my-5 mx-2 p-2 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600 bg-white hover:bg-tyellow"
               >
                 Update
               </button>
