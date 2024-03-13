@@ -7,22 +7,32 @@ import NoticeForm from '@/components/Notice/NoticeForm';
 import NoticeTable from '@/components/Notice/NoticeTable';
 import { getAuthToken } from '@/lib/middleware/apiInceptor';
 
-const NewsPage = () => {
+const NewsPage = ({ clientProps }) => {
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
-  const [noticeList, setNoticeList] = useState([]);
+  const { schools = [], schoolUuid = '', profie = {}, noticeList = [] } = clientProps
+  const [notice, setNoticeList] = useState(clientProps.noticeList);
   const [selectedNewsId, setSelectedNewsId] = useState(null);
 
   const fetchNotice = async () => {
     try {
       setIsLoading(true);
-      const newsData = await getAllNotice();
-      setNoticeList(newsData);
-      console.log(newsData)
+      const noticeData = await getAllNotice();
+      setNoticeList(noticeData);
+      console.log(noticeList)
     } catch (error) {
       console.error('Error fetching news:', error);
     } finally {
       setIsLoading(false);
+    }
+  };
+
+  const handleFormSubmit = async () => {
+    try {
+      const updatedNewsList = await getAllNotice(schoolUuid);
+      setNoticeList(updatedNewsList);
+    } catch (error) {
+      console.error("Error submitting form:", error);
     }
   };
 
@@ -64,8 +74,10 @@ const NewsPage = () => {
 
   return (
     <div className="news-page">
-      <NoticeForm selectedNewsId={selectedNewsId} onFormSubmit={fetchNotice} noticeList={noticeList} />
-      <NoticeTable noticeList={noticeList} onDelete={handleDelete} onEdit={handleEdit} />
+      <NoticeForm selectedNewsId={selectedNewsId} onFormSubmit={handleFormSubmit} noticeList={notice} schools={schools}
+        schoolUuid={schoolUuid}
+        profile={profie} />
+      <NoticeTable noticeList={notice} onDelete={handleDelete} onEdit={handleEdit} />
     </div>
   );
 };

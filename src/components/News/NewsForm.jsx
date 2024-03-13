@@ -129,11 +129,11 @@ const NewsForm = ({ selectedNewsId, onFormSubmit, newsList, ...others }) => {
   return (
     <>
       <div className='flex flex-col w-full justify-center items-center bg-[url("/MessageSvg.svg")]'>
-        <h1 className="text-center mx-auto w-full my-3 text-4xl font-bold text-tgreen ">
+        <h1 className="text-center mx-auto w-full my-3 text-4xl font-bold text-tyellow ">
           News Details Form
         </h1>
         <div
-          className="w-11/12 rounded-lg flex flex-col justify-center items-center bg-bgreen opacity-75 p-5"
+          className="w-11/12 rounded-lg flex flex-col justify-center items-center bg-byellow opacity-75 p-5"
           onSubmit={handleSubmit}
         >
           <div className="w-full grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 ">
@@ -168,7 +168,7 @@ const NewsForm = ({ selectedNewsId, onFormSubmit, newsList, ...others }) => {
           </div>
           <button
             onClick={handleSubmit}
-            className="w-40 my-5 mx-auto p-2 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600 bg-white hover:bg-tgreen"
+            className="w-40 my-5 mx-auto p-2 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600 bg-white hover:bg-tyellow"
           >
             Submit
           </button>
