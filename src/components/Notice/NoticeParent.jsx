@@ -1,27 +1,31 @@
-
-'use client'
-import { useRouter } from 'next/navigation';
-import React, { useEffect, useState } from 'react';
-import { getAllNotice, deleteNotice } from '@/lib/services/notices/index';
-import NoticeForm from '@/components/Notice/NoticeForm';
-import NoticeTable from '@/components/Notice/NoticeTable';
-import { getAuthToken } from '@/lib/middleware/apiInceptor';
+"use client";
+import { useRouter } from "next/navigation";
+import React, { useEffect, useState } from "react";
+import { getAllNotice, deleteNotice } from "@/lib/services/notices/index";
+import NoticeForm from "@/components/Notice/NoticeForm";
+import NoticeTable from "@/components/Notice/NoticeTable";
+import { getAuthToken } from "@/lib/middleware/apiInceptor";
 
 const NewsPage = ({ clientProps }) => {
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
-  const { schools = [], schoolUuid = '', profie = {}, noticeList = [] } = clientProps
+  const {
+    schools = [],
+    schoolUuid = "",
+    profie = {},
+    noticeList = [],
+  } = clientProps;
   const [notice, setNoticeList] = useState(clientProps.noticeList);
-  const [selectedNewsId, setSelectedNewsId] = useState(null);
+  const [selectedNoticeId, setSelectedNoticeId] = useState(null);
 
   const fetchNotice = async () => {
     try {
       setIsLoading(true);
       const noticeData = await getAllNotice();
       setNoticeList(noticeData);
-      console.log(noticeList)
+      console.log(noticeList);
     } catch (error) {
-      console.error('Error fetching news:', error);
+      console.error("Error fetching news:", error);
     } finally {
       setIsLoading(false);
     }
@@ -31,6 +35,7 @@ const NewsPage = ({ clientProps }) => {
     try {
       const updatedNewsList = await getAllNotice(schoolUuid);
       setNoticeList(updatedNewsList);
+      setSelectedNoticeId(null);
     } catch (error) {
       console.error("Error submitting form:", error);
     }
@@ -42,14 +47,14 @@ const NewsPage = ({ clientProps }) => {
       await deleteNotice(uuid);
       fetchNotice();
     } catch (error) {
-      console.error('Error deleting notice:', error);
+      console.error("Error deleting notice:", error);
     } finally {
       setIsLoading(false);
     }
   };
 
   const handleEdit = (uuid) => {
-    setSelectedNewsId(uuid);
+    setSelectedNoticeId(uuid);
   };
 
   useEffect(() => {
@@ -57,13 +62,13 @@ const NewsPage = ({ clientProps }) => {
       try {
         const token = getAuthToken(); // Get authentication token from cookies
         if (!token) {
-          router.push('/admin/login'); // Redirect to login page if token is not present
+          router.push("/admin/login"); // Redirect to login page if token is not present
           return;
         }
         setIsLoading(true);
         await fetchNotice();
       } catch (error) {
-        console.error('Error fetching news:', error);
+        console.error("Error fetching news:", error);
       } finally {
         setIsLoading(false);
       }
@@ -74,10 +79,20 @@ const NewsPage = ({ clientProps }) => {
 
   return (
     <div className="news-page">
-      <NoticeForm selectedNewsId={selectedNewsId} onFormSubmit={handleFormSubmit} noticeList={notice} schools={schools}
+      <NoticeForm
+        selectedNoticeId={selectedNoticeId}
+        onFormSubmit={handleFormSubmit}
+        setSelectedNoticeId={setSelectedNoticeId}
+        noticeList={notice}
+        schools={schools}
         schoolUuid={schoolUuid}
-        profile={profie} />
-      <NoticeTable noticeList={notice} onDelete={handleDelete} onEdit={handleEdit} />
+        profile={profie}
+      />
+      <NoticeTable
+        noticeList={notice}
+        onDelete={handleDelete}
+        onEdit={handleEdit}
+      />
     </div>
   );
 };

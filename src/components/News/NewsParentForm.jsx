@@ -33,6 +33,7 @@ const NewsPage = ({ clientProps }) => {
     try {
       const updatedNewsList = await getAllNews(schoolUuid);
       setNewsList(updatedNewsList);
+      setSelectedNewsId(null);
     } catch (error) {
       console.error("Error submitting form:", error);
     }
@@ -82,6 +83,7 @@ const NewsPage = ({ clientProps }) => {
         selectedNewsId={selectedNewsId}
         onFormSubmit={handleFormSubmit}
         newsList={news}
+        setSelectedNewsId={setSelectedNewsId}
       />
       <NewsTable newsList={news} onDelete={handleDelete} onEdit={handleEdit} />
     </div>
