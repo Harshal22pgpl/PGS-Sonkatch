@@ -1,49 +1,59 @@
-import React, { useState } from 'react'
-import Button from '@/components/Button/Button';
-import { ADMISSION_SUCCESS, ERR_MSG, FORM_INITIALS } from '@/lib/constants/admission';
-import Image from 'next/image';
+import React, { useState } from "react";
+import Button from "@/components/Button/Button";
+import {
+  ADMISSION_SUCCESS,
+  ERR_MSG,
+  FORM_INITIALS,
+} from "@/lib/constants/admission";
+import Image from "next/image";
 
 export default function ModalCard() {
-  const [hasError, setError] = useState({ msg: '', type: '' })
+  const [hasError, setError] = useState({ msg: "", type: "" });
   const [formData, setFormData] = useState(FORM_INITIALS);
   const handleChange = ({ target }) => {
-    const { name, value } = target
-    setError({ msg: '', type: '' })
-    setFormData((prev) => ({ ...prev, [name]: value }))
-
+    const { name, value } = target;
+    setError({ msg: "", type: "" });
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setError({ msg: '', type: '' })
-    let isValid = validator(formData, ERR_MSG, ['otherQuery'])
+    setError({ msg: "", type: "" });
+    let isValid = validator(formData, ERR_MSG, ["otherQuery"]);
     if (isValid === true) {
       try {
-        setIsLoading(true)
-        let res = await addAdmissionQuery(formData)
+        setIsLoading(true);
+        let res = await addAdmissionQuery(formData);
         if (res) {
-          setFormData(FORM_INITIALS)
-          setIsLoading(false)
-          setError({ msg: ADMISSION_SUCCESS, type: 'success' })
+          setFormData(FORM_INITIALS);
+          setIsLoading(false);
+          setError({ msg: ADMISSION_SUCCESS, type: "success" });
         }
       } catch (error) {
-        setIsLoading(false)
+        setIsLoading(false);
       }
+    } else {
+      setError({ msg: isValid, type: "error" });
     }
-    else {
-      setError({ msg: isValid, type: 'error' })
-    }
-
   };
 
   return (
     <>
-      <div className="w-full h-full " >
-        <h1 className='text-center p-3 text-tgreen text-5xl font-extrabold'>Pratibha Global School, SONKATCH</h1>
-        <h2 className='text-center p-3 text-tgreen text-3xl font-extrabold'>Admission Open 2024-25</h2>
+      <div className="w-full h-full ">
+        <h1 className="text-center p-3 text-tgreen text-5xl font-extrabold">
+          Pratibha Global School, SONKATCH
+        </h1>
+        <h2 className="text-center p-3 text-tgreen text-3xl font-extrabold">
+          Admission Open 2024-25
+        </h2>
 
-        <div className='flex flex-col md:flex-row md:justify-around items-center bg-cover'>
-          <form onSubmit={handleSubmit} className="space-y-4 bg-white p-6 w-full md:w-80 shadow-md flex flex-col border-indigo-200 rounded-xl ">
-            <h1 className=' text-xl bg-clip-text bg-gradient-to-r to-yellow-600 from-pink-400'>Admisson Form</h1>
+        <div className="flex flex-col md:flex-row md:justify-around items-center bg-cover">
+          <form
+            onSubmit={handleSubmit}
+            className="space-y-4 bg-white p-6 w-full md:w-80 shadow-md flex flex-col border-indigo-200 rounded-xl "
+          >
+            <h1 className=" text-xl bg-clip-text bg-gradient-to-r to-yellow-600 from-pink-400">
+              Admisson Form
+            </h1>
             <input
               type="text"
               name="applicantName"
@@ -107,25 +117,24 @@ export default function ModalCard() {
               onClick={handleSubmit}
               btnType="primary" // Adjust button type as needed
               size="large" // Adjust button size as needed
-
               className="text-white px-4 py-2 rounded-lg"
-              style={{ background: '#efde03' }}
+              style={{ background: "#efde03" }}
             >
               Submit
             </Button>
           </form>
 
-          <div className='hidden md:flex lg:flex flex-col justify-center items-center mt-5 md:mt-0 max-w-3xl'>
-          <Image
-          alt="image"
-          src="/AboutCarosoul/4.png"
-          width={600}
-          height={500}
-          className='rounded-full'
-          />
+          <div className="hidden md:flex lg:flex flex-col justify-center items-center mt-5 md:mt-0 max-w-3xl">
+            <Image
+              alt="image"
+              src="/homeGallary/HomeGallary (1).jpg"
+              width={600}
+              height={500}
+              className="rounded-full"
+            />
           </div>
         </div>
       </div>
     </>
-  )
+  );
 }
