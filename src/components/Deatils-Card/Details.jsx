@@ -7,7 +7,7 @@ const Header = ({ title }) => {
   return (
     <>
       {/* Header background with waves */}
-      <div className="relative bg-gradient-to-r from-green-700 to-cyan-200 text-white overflow-hidden">
+      <div className="relative bg-gradient-to-r from-yellow-500 to-yellow-200 text-white overflow-hidden">
         
 
        
